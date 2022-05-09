@@ -48,5 +48,6 @@ SELECT Ciutat FROM Aeroport WHERE NomAeroport IN (SELECT NomAerOrigen FROM Vol W
 Using a subquery.
 Find the maximum amount of arrivals in a single airport.
 ```mysql
-
+SELECT MAX(Arrivals.CountArrivals) AS 'MaxCountArrivals' FROM (SELECT COUNT(NomAerDesti) AS 'CountArrivals' FROM Vol GROUP BY NomAerDesti) Arrivals;
 ```
+<img width="106" alt="image" src="https://user-images.githubusercontent.com/91556453/167433563-eb812419-ef93-43e0-8a8e-156dbdb630a0.png">
